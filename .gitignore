@@ -184,6 +184,7 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+thunder-tests/
 
 # TypeScript v1 declaration files
 typings/
@@ -292,3 +293,5 @@ $RECYCLE.BIN/
 
 coverage
 .nyc*
+thunder-tests/thunderActivity.json
+thunder-tests/thunderActivity.json

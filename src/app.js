@@ -11,6 +11,9 @@ app.get('/', (_request, response) => {
 // Lista todos os produtos
 app.get('/products', productsControler.getAll);
 
+// Lista o produto pelo seu ID
+app.get('/products/:id', productsControler.getById);
+
 // não remova essa exportação, é para o avaliador funcionar
 // você pode registrar suas rotas normalmente, como o exemplo acima
 // você deve usar o arquivo index.js para executar sua aplicação 
