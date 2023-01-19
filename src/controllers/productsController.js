@@ -12,7 +12,16 @@ const getById = async (req, res) => {
   return res.status(200).json(message);
 };
 
+const create = async (req, res) => {
+  const { name } = req.body;
+  console.log(name);
+  const { message, type } = await productsService.create({ name });
+  if (type === 400 || type === 422) return res.status(type).json({ message });
+  return res.status(201).json(message);
+};
+
 module.exports = {
   getAll,
   getById,
+  create,
 };
