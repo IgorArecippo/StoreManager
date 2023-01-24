@@ -17,14 +17,13 @@ const getById = async (productId) => {
 };
 
 const create = async ({ name }) => {
-  console.log(name);
   if (!name) return { type: 400, message: '"name" is required' };
   const id = await productsModel.create({ name });
   const newProduct = await productsModel.getById(id);
   const error = schema.validateName(name);
   if (error.type) return error;
 
-  return { type: null, message: newProduct };
+  return { type: 201, message: newProduct };
 };
 
 module.exports = {
