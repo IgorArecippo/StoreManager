@@ -30,7 +30,7 @@ const update = async (req, res) => {
 
 const del = async (req, res) => {
   const { id } = req.params;
-  const { message, type } = await productsService.del({ id });
+  const { message, type } = await productsService.del(id);
   if (type) return res.status(404).json({ message });
   return res.status(204).json();
 };

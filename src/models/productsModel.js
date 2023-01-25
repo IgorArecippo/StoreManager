@@ -30,7 +30,7 @@ const update = async (productId, name) => {
   return result.affectedRows;
 };
 
-const del = async ({ id }) => {
+const del = async (id) => {
   const query = 'DELETE FROM StoreManager.products WHERE id = ?';
   const [deleted] = await connection.execute(query, [id]);
   return deleted.affectedRows;

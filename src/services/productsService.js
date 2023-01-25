@@ -41,7 +41,7 @@ const update = async (name, productId) => {
   return { type: null, message: updatedProduct };
 };
 
-const del = async ({ id }) => {
+const del = async (id) => {
   const testId = await productsModel.getById(id);
   if (!testId) return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
   await productsModel.del(id);
